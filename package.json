@@ -1,0 +1,27 @@
+{
+  "name": "react-parlx",
+  "version": "1.0.0-beta.1",
+  "description": "parlx.js implementation for React.js component",
+  "main": "./src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JB1905/react-parlx.git"
+  },
+  "keywords": [
+    "React",
+    "ES6",
+    "parallax"
+  ],
+  "author": "Jakub Biesiada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JB1905/react-parlx/issues"
+  },
+  "homepage": "https://github.com/JB1905/react-parlx#readme",
+  "dependencies": {
+    "parlx.js": "1.1.0"
+  },
+  "peerDependencies": {
+    "react": "16.x.x"
+  }
+}
