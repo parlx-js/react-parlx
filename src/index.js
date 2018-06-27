@@ -14,9 +14,12 @@ export default class ReactParlx extends Component {
 
   render() {
     return (
-      <div className={ this.props.className || 'parallax' } style={ this.props.style } ref={ el => this.el = el }>
-        { this.props.overlay ? <div className="overlay"></div> : null }
-        { this.props.children }
+      <div
+        className={this.props.className || 'parallax'}
+        style={this.props.style}
+        ref={el => (this.el = el)}>
+        {this.props.overlay ? <div className="overlay" /> : null}
+        {this.props.children}
       </div>
     );
   }
