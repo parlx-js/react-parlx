@@ -1,5 +1,9 @@
 # react-parlx Changelog
 
+## 1.0.2 (2018-07-16)
+#### Dependencies
+- updated parlx.js to v1.3.0 (resolved bug with React.js build)
+
 ## 1.0.1 (2018-07-13)
 #### Bug Fix
 - the incompatibility problem has been fixed
