@@ -6,7 +6,7 @@ export default class ReactParlx extends Component {
     const { options } = this.props;
     new Parlx(this.el, options);
 
-    if (this.props.parlxMove !== undefined)
+    if (this.props.parlxMove)
       this.el.addEventListener('parlxMove', this.output);
   }
 
