@@ -1,7 +1,7 @@
 {
   "name": "react-parlx",
-  "version": "1.0.3",
-  "description": "parlx.js implementation for React.js component",
+  "version": "1.0.4",
+  "description": "parlx.js implementation for React component",
   "main": "./lib/react-parlx.min.js",
   "scripts": {
     "build": "webpack --env dev && webpack --env build",
@@ -43,6 +43,6 @@
     "yargs": "^12.0.1"
   },
   "peerDependencies": {
-    "react": "16.x.x"
+    "react": ">= 16.3.0"
   }
 }

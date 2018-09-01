@@ -1,15 +1,25 @@
 # react-parlx Changelog
 
+## 1.0.4 (2018-09-01)
+#### Breaking Changes
+- dropped support for React `< 16.3.0`
+
+#### Internal
+- updated ref to React Refs API
+
+#### Repository Changes
+- removed map for production version
+
 ## 1.0.3 (2018-08-28)
 #### Dependencies
 - updated Babel to `^7.0.0` stable
 - updated babel-plugin-add-module-exports to `^0.3.3`
 - updated Webpack to `^4.17.1`
-- updated babel-loader to `^8.0.0`
+- updated babel-loader to `^8.0.0` stable
 
 ## 1.0.2 (2018-07-16)
 #### Dependencies
-- updated parlx.js to `^1.3.0` (resolved bug with React.js build)
+- updated parlx.js to `^1.3.0` (resolved bug with React build)
 
 ## 1.0.1 (2018-07-13)
 #### Bug Fix
