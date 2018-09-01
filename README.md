@@ -48,8 +48,8 @@ You can add components with or without additional content:
 Name | Type | Default | Description | Available options
 -|-|-|-|-
 **overlay** | boolean | `false` | Create overlay for parallax container element | `true` (enable) / `false` (disable)
-**style** | object | `{}` | CSS styles for parallax container | CSS styles
 **options** | object | `{}` | [Default parlx.js options](https://github.com/JB1905/parlx.js#options) | [parlx.js options](https://github.com/JB1905/parlx.js#options)
+**style** | object | `{}` | CSS styles for parallax container | CSS styles
 **className** | string | `parallax` | Parallax container class name | Name of parallax container
 
 ## Event
