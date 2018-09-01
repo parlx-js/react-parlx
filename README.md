@@ -3,7 +3,7 @@
 [![NPM version](http://img.shields.io/npm/v/react-parlx.svg?style=flat-square)](https://www.npmjs.com/package/react-parlx)
 [![NPM downloads](http://img.shields.io/npm/dm/react-parlx.svg?style=flat-square)](https://www.npmjs.com/package/react-parlx)
 
-#### [parlx.js](https://www.npmjs.com/package/parlx.js) implementation for React.js component
+#### [parlx.js](https://www.npmjs.com/package/parlx.js) implementation for React component
 ## Demo
 **[See plugin in action](https://jb1905.github.io/parlx.js/)**
 
@@ -15,7 +15,7 @@ $ yarn add react-parlx
 ```
 
 ## Getting Started
-**• Import plugin in React.js application file:**
+**• Import plugin in React application file:**
 ```js
 import ReactParlx from 'react-parlx';
 ```
