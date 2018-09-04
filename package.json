@@ -1,6 +1,6 @@
 {
   "name": "react-parlx",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "parlx.js implementation for React component",
   "main": "./lib/react-parlx.min.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/JB1905/react-parlx#readme",
   "dependencies": {
-    "parlx.js": "^1.3.0"
+    "parlx.js": "^1.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -36,9 +36,9 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "babel-loader": "^8.0.0",
+    "babel-loader": "^8.0.2",
     "babel-plugin-add-module-exports": "^0.3.3",
-    "webpack": "^4.17.1",
+    "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
     "yargs": "^12.0.1"
   },

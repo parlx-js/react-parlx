@@ -1,5 +1,9 @@
 # react-parlx Changelog
 
+## 1.0.5 (2018-09-04)
+#### Dependencies
+- update parlx.js to `^1.3.1`
+
 ## 1.0.4 (2018-09-01)
 #### Breaking Changes
 - dropped support for React `< 16.3.0`
