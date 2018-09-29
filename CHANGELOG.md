@@ -1,5 +1,9 @@
 # react-parlx Changelog
 
+## 1.0.6 (2018-09-29)
+#### Dependencies
+- updated devDependencies
+
 ## 1.0.5 (2018-09-04)
 #### Dependencies
 - updated parlx.js to `^1.3.1`
