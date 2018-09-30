@@ -1,5 +1,9 @@
 # react-parlx Changelog
 
+## 1.0.7 (2018-09-30)
+#### Internal
+- cleaned up
+
 ## 1.0.6 (2018-09-29)
 #### Dependencies
 - updated devDependencies
