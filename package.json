@@ -1,6 +1,6 @@
 {
   "name": "react-parlx",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "parlx.js implementation for React component",
   "main": "./lib/react-parlx.min.js",
   "scripts": {
