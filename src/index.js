@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import Parlx from 'parlx.js';
 
 export default class ReactParlx extends Component {
-  constructor() {
-    super();
-
-    this.el = React.createRef();
-  }
+  el = React.createRef();
 
   componentDidMount() {
     const { options, parlxMove } = this.props;
@@ -18,10 +14,10 @@ export default class ReactParlx extends Component {
   output = e => this.props.parlxMove(e.detail.move);
 
   render() {
-    const { className, style, overlay, children } = this.props;
+    const { className = 'parallax', style, overlay, children } = this.props;
 
     return (
-      <div className={className || 'parallax'} style={style} ref={this.el}>
+      <div className={className} style={style} ref={this.el}>
         {overlay ? <div className="overlay" /> : null}
         {children}
       </div>
