@@ -18,7 +18,7 @@ export default class ReactParlx extends Component {
 
     return (
       <div className={className} style={style} ref={this.el}>
-        {overlay ? <div className="overlay" /> : null}
+        {overlay && <div className="overlay" />}
         {children}
       </div>
     );
