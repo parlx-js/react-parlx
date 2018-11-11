@@ -14,7 +14,12 @@ export default class ReactParlx extends Component {
   output = e => this.props.parlxMove(e.detail.move);
 
   render() {
-    const { className = 'parallax', style, overlay, children } = this.props;
+    const {
+      className = 'parallax',
+      style = {},
+      overlay,
+      children
+    } = this.props;
 
     return (
       <div className={className} style={style} ref={this.el}>
