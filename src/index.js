@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Parlx from 'parlx.js';
 
 export default class ReactParlx extends Component {
@@ -29,3 +30,12 @@ export default class ReactParlx extends Component {
     );
   }
 }
+
+ReactParlx.propTypes = {
+  options: PropTypes.node,
+  parlxMove: PropTypes.func,
+  className: PropTypes.string,
+  style: PropTypes.node,
+  overlay: PropTypes.bool,
+  children: PropTypes.node
+};
