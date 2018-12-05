@@ -7,10 +7,12 @@ export default class ReactParlx extends Component {
 
   componentDidMount() {
     const { options, parlxMove } = this.props;
-    const parlx = new Parlx(this.el.current, options);
+    Parlx.init(this.el.current, options);
 
     if (parlxMove) this.el.current.addEventListener('parlxMove', this.output);
   }
+
+  componentWillUnmount = () => this.el.current.parlx.destroy();
 
   output = e => this.props.parlxMove(e.detail.move);
 
