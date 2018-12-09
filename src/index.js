@@ -34,10 +34,10 @@ export default class ReactParlx extends Component {
 }
 
 ReactParlx.propTypes = {
-  options: PropTypes.node,
+  options: PropTypes.object,
   parlxMove: PropTypes.func,
   className: PropTypes.string,
-  style: PropTypes.node,
+  style: PropTypes.object,
   overlay: PropTypes.bool,
   children: PropTypes.node
 };

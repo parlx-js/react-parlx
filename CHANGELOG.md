@@ -7,6 +7,9 @@
 #### Dependencies
 - updated parlx.js to v2.0.0
 
+#### Improvement
+- removed PropTypes from output files
+
 #### Repository Changes
 - added Travis CI config
 - added Prettier config
