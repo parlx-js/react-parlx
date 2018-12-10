@@ -1,11 +1,11 @@
 # react-parlx Changelog
 
-## 1.2.0 (Soon)
+## 1.2.0 beta 1 (2018-12-10)
 #### Internal
 - added parlx.js `destroy()` method call on `componentWillUnmount()`
 
 #### Dependencies
-- updated parlx.js to v2.0.0
+- updated parlx.js to v2.0.0 beta 1
 
 #### Improvement
 - removed PropTypes from output files
