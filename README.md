@@ -35,13 +35,13 @@ You can add components with or without additional content:
 
 *with:*
 ```js
-<ReactParlx /* options */>
+<ReactParlx /* options */ >
   // additional content
 </ReactParlx>
 ```
 *without:*
 ```js
-<ReactParlx /* options *//>
+<ReactParlx /* options */ />
 ```
 
 ## Props
