@@ -17,20 +17,7 @@ if (env === 'build') {
 const config = {
   mode,
   entry: `${__dirname}/src/index.js`,
-  externals: {
-    react: {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react'
-    },
-    'parlx.js': {
-      root: 'Parlx',
-      commonjs2: 'parlx.js',
-      commonjs: 'parlx.js',
-      amd: 'parlx.js'
-    }
-  },
+  externals: ['react', 'parlx.js'],
   devtool,
   output: {
     path: `${__dirname}/lib`,
@@ -44,7 +31,7 @@ const config = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         exclude: /node_modules/
       }
     ]
