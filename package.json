@@ -51,7 +51,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "webpack": "^4.28.3",
-    "webpack-cli": "^3.2.0"
+    "webpack-cli": "^3.2.1"
   },
   "peerDependencies": {
     "react": ">= 16.3.0"
