@@ -1,6 +1,6 @@
 # react-parlx Changelog
 
-## 1.2.0 beta 2 (Soon)
+## 1.2.0 beta 2 (2019-01-17)
 #### Breaking Changes
 - splitted `options` prop into `settings` and `methods`
 
