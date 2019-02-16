@@ -6,8 +6,8 @@ export default class ReactParlx extends Component {
   el = React.createRef();
 
   componentDidMount() {
-    const { methods, settings, parlxMove } = this.props;
-    Parlx.init({ elements: this.el.current, methods, settings });
+    const { settings, callbacks, parlxMove } = this.props;
+    Parlx.init({ elements: this.el.current, settings, callbacks });
 
     if (parlxMove) this.el.current.addEventListener('parlxMove', this.output);
   }
@@ -30,7 +30,7 @@ export default class ReactParlx extends Component {
 
 ReactParlx.propTypes = {
   settings: PropTypes.object,
-  methods: PropTypes.object,
+  callbacks: PropTypes.object,
   parlxMove: PropTypes.func,
   className: PropTypes.string,
   style: PropTypes.object,

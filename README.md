@@ -29,7 +29,7 @@ import ReactParlx from 'react-parlx';
 <ReactParlx
   overlay={ /* true/false */ }
   settings={ /* settings */ }
-  methods={ /* methods */ }
+  callbacks={ /* callbacks */ }
   styles={ /* CSS styles */ }
   className={ /* class name(s) */ }
   parlxMove={ /* event output destination */ }
@@ -54,7 +54,7 @@ Name | Type | Default | Description | Available options
 -|-|-|-|-
 **overlay** | boolean | `false` | Create overlay for parallax container element | `true` (enable) / `false` (disable)
 **settings** | object | `{}` | [Default parlx.js settings](https://github.com/JB1905/parlx.js#settings) | [parlx.js settings](https://github.com/JB1905/parlx.js#settings)
-**methods** | object | `{}` | [Default parlx.js methods](https://github.com/JB1905/parlx.js#methods) | [parlx.js methods](https://github.com/JB1905/parlx.js#methods)
+**callbacks** | object | `{}` | [Default parlx.js callbacks](https://github.com/JB1905/parlx.js#callbacks) | [parlx.js callbacks](https://github.com/JB1905/parlx.js#callbacks)
 **style** | object | `{}` | CSS styles for parallax container | CSS styles
 **className** | string | `parallax` | Parallax container class name | Name of parallax container
 
