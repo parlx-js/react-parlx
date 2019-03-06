@@ -1,6 +1,6 @@
 # react-parlx Changelog
 
-## 1.2.0 (Soon)
+## 1.2.0 (2019-03-06)
 #### Repository Changes
 - updated dependencies
 
