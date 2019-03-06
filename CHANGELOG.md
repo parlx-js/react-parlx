@@ -1,5 +1,12 @@
 # react-parlx Changelog
 
+## 1.2.0 (Soon)
+#### Repository Changes
+- updated dependencies
+
+#### Breaking Changes
+- renamed `methods` prop to `callbacks`
+
 ## 1.2.0 beta 2 (2019-01-17)
 #### Breaking Changes
 - splitted `options` prop into `settings` and `methods`

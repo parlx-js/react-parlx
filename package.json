@@ -1,6 +1,6 @@
 {
   "name": "react-parlx",
-  "version": "1.2.0-beta.2",
+  "version": "1.2.0",
   "description": "parlx.js implementation for React component",
   "author": "Jakub Biesiada",
   "license": "MIT",
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/JB1905/react-parlx#readme",
   "dependencies": {
-    "parlx.js": "^2.0.0-beta.2"
+    "parlx.js": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
