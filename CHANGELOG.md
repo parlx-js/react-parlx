@@ -1,5 +1,12 @@
 # react-parlx Changelog
 
+## 1.3.0 beta 1 (Soon)
+#### Internal
+- rewritten with React Hooks
+
+#### Breaking Changes
+- dropped support for React < 16.8.0
+
 ## 1.2.0 (2019-03-06)
 #### Repository Changes
 - updated dependencies

@@ -1,31 +1,34 @@
-import React, { Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Parlx from 'parlx.js';
 
-export default class ReactParlx extends Component {
-  el = React.createRef();
+export default function ReactParlx({
+  settings,
+  callbacks,
+  parlxMove,
+  className,
+  overlay,
+  children,
+  ...props
+}) {
+  const el = useRef();
 
-  componentDidMount() {
-    const { settings, callbacks, parlxMove } = this.props;
-    Parlx.init({ elements: this.el.current, settings, callbacks });
+  const output = e => parlxMove(e.detail.move);
 
-    if (parlxMove) this.el.current.addEventListener('parlxMove', this.output);
-  }
+  useEffect(() => {
+    Parlx.init({ elements: el.current, settings, callbacks });
 
-  componentWillUnmount = () => this.el.current.parlx.destroy();
+    if (parlxMove) el.current.addEventListener('parlxMove', output);
 
-  output = e => this.props.parlxMove(e.detail.move);
+    return () => el.current.parlx.destroy();
+  }, []);
 
-  render() {
-    const { className, style, overlay, children } = this.props;
-
-    return (
-      <div className={className} style={style} ref={this.el}>
-        {overlay && <div className="overlay" />}
-        {children}
-      </div>
-    );
-  }
+  return (
+    <div {...props} className={className} ref={el}>
+      {overlay && <div className="overlay" />}
+      {children}
+    </div>
+  );
 }
 
 ReactParlx.propTypes = {
@@ -33,12 +36,11 @@ ReactParlx.propTypes = {
   callbacks: PropTypes.object,
   parlxMove: PropTypes.func,
   className: PropTypes.string,
-  style: PropTypes.object,
   overlay: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
+  props: PropTypes.object
 };
 
 ReactParlx.defaultProps = {
-  className: 'parallax',
-  style: {}
+  className: 'parallax'
 };
