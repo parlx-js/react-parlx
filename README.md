@@ -8,7 +8,7 @@
 **[See plugin in action](https://jb1905.github.io/parlx.js/)**
 
 ## How to Install
-At the beginning install the library in your project via npm:
+First, install the library in your project by npm:
 ```sh
 $ npm install react-parlx
 ```
