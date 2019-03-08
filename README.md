@@ -30,9 +30,9 @@ import ReactParlx from 'react-parlx';
   overlay={ /* true/false */ }
   settings={ /* settings */ }
   callbacks={ /* callbacks */ }
-  styles={ /* CSS styles */ }
   className={ /* class name(s) */ }
   parlxMove={ /* event output destination */ }
+  // other props for div tag e.g. style
 />
 ```
 
@@ -55,7 +55,6 @@ Name | Type | Default | Description | Available options
 **overlay** | boolean | `false` | Create overlay for parallax container element | `true` (enable) / `false` (disable)
 **settings** | object | `{}` | [Default parlx.js settings](https://github.com/JB1905/parlx.js#settings) | [parlx.js settings](https://github.com/JB1905/parlx.js#settings)
 **callbacks** | object | `{}` | [Default parlx.js callbacks](https://github.com/JB1905/parlx.js#callbacks) | [parlx.js callbacks](https://github.com/JB1905/parlx.js#callbacks)
-**style** | object | `{}` | CSS styles for parallax container | CSS styles
 **className** | string | `parallax` | Parallax container class name | Name of parallax container
 
 ## Event
