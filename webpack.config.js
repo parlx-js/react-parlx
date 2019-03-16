@@ -16,7 +16,7 @@ module.exports = env => {
   return {
     mode,
     entry: `${__dirname}/src/index.js`,
-    externals: ['react', 'parlx.js'],
+    externals: ['parlx.js', 'react'],
     devtool,
     output: {
       path: `${__dirname}/lib`,

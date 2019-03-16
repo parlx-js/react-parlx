@@ -13,15 +13,17 @@ export default function ReactParlx({
 }) {
   const el = useRef();
 
-  const output = e => parlxMove(e.detail.move);
-
   useEffect(() => {
-    Parlx.init({ elements: el.current, settings, callbacks });
+    const current = el.current;
 
-    if (parlxMove) el.current.addEventListener('parlxMove', output);
+    Parlx.init({ elements: current, settings, callbacks });
 
-    return () => el.current.parlx.destroy();
-  }, []);
+    if (parlxMove) current.addEventListener('parlxMove', output);
+
+    const output = e => parlxMove(e.detail.move);
+
+    return () => current.parlx.destroy();
+  }, [callbacks, parlxMove, settings]);
 
   return (
     <div {...props} className={className} ref={el}>
