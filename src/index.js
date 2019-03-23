@@ -18,9 +18,9 @@ export default function ReactParlx({
 
     Parlx.init({ elements: current, settings, callbacks });
 
-    if (parlxMove) current.addEventListener('parlxMove', output);
-
     const output = e => parlxMove(e.detail.move);
+
+    if (parlxMove) current.addEventListener('parlxMove', output);
 
     return () => current.parlx.destroy();
   }, [callbacks, parlxMove, settings]);

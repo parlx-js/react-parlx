@@ -1,5 +1,9 @@
 # react-parlx Changelog
 
+## 1.3.0 beta 2 (2019-03-23)
+## Bug Fix
+- fixed `parlxMove` event bug
+
 ## 1.3.0 beta 1 (2019-03-23)
 #### Internal
 - rewritten with React Hooks
