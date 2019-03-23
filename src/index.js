@@ -26,7 +26,7 @@ export default function ReactParlx({
   }, [callbacks, parlxMove, settings]);
 
   return (
-    <div {...props} className={className} ref={el}>
+    <div {...props} ref={el} className={className}>
       {overlay && <div className="overlay" />}
       {children}
     </div>
