@@ -3379,9 +3379,9 @@ parent-module@^1.0.0:
     callsites "^3.0.0"
 
 parlx.js@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/parlx.js/-/parlx.js-2.0.3.tgz#df58d6aef4667969553fe2bb2f417008d87d5416"
-  integrity sha512-9fEhHnuTLiinvNSoSol0sKGn5dXCQhXBhGQUzRf91wEP/8nVr6S6RHToSJdZdBJ/ndhKb5SG0bOCP10dAl2YGg==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/parlx.js/-/parlx.js-2.0.4.tgz#550bbf3587fed0dc5e28663f77446d9c0b84a0e7"
+  integrity sha512-yS4WSCDVz/2yWfz7B9sGM/RnkdyLUGChPmBRtSd0uqEpTI8Bfxn7GcNELHNts0X3fSZMRaQQ69sv80hsHoA3CA==
 
 parse-asn1@^5.0.0:
   version "5.1.4"
