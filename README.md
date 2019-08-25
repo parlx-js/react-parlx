@@ -5,7 +5,8 @@
 
 #### [parlx.js](https://www.npmjs.com/package/parlx.js) implementation for React component
 ## Demo
-**[See plugin in action](https://jb1905.github.io/parlx.js/)**
+**[Live – check website](https://jb1905.github.io/parlx.js/)**<br>
+**[Playground – play with library in Storybook](https://jb1905.github.io/react-parlx/)**
 
 ## How to Install
 First, install the library in your project by npm:
