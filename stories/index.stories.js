@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
-import ReactParlx from '../src';
+import ReactParlx from '../lib/react-parlx';
 
-const stories = storiesOf('ReactParlx');
+const stories = storiesOf('ReactParlx', module);
 
 const Main = ({ children, horizontal = false }) => (
   <main
@@ -43,6 +43,7 @@ const Title = ({ children }) => (
 const Background = () => (
   <img
     className="parlx-children"
+    src="https://raw.githubusercontent.com/JB1905/parlx.js/gh-pages/static/media/mountains.97c55f0f.jpg"
   />
 );
 
