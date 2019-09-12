@@ -1,8 +1,11 @@
 # react-parlx Changelog
 
-## 1.4.0 (2019-xx-xx)
+## 1.4.0 (Soon)
 #### Dependencies
-- updated parlx.js to `^3.0.0`
+- update parlx.js to `^3.0.0`
+
+#### Internal
+- rewrite with TypeScript
 
 ## 1.3.0 beta 2 / 1.3.0 (2019-03-23)
 #### Bug Fix
