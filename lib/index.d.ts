@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 declare type Props = {
     settings: object;
     callbacks: object;
-    parlxMove: (e: CustomEvent) => any;
+    parlxMove: (e: CustomEvent) => void;
     className: string;
     overlay: boolean;
     children: ChildNode | ChildNode[];

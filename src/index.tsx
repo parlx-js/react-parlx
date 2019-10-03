@@ -6,7 +6,7 @@ import { Options } from 'parlx.js/lib/types';
 type Props = {
   settings: object;
   callbacks: object;
-  parlxMove: (e: CustomEvent) => any;
+  parlxMove: (e: CustomEvent) => void;
   className: string;
   overlay: boolean;
   children: ChildNode | ChildNode[];
