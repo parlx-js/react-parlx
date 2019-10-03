@@ -7,6 +7,9 @@
 #### Internal
 - rewrite with TypeScript
 
+#### Repository Changes
+- replace `Webpack` with `Rollup`
+
 ## 1.3.0 beta 2 / 1.3.0 (2019-03-23)
 #### Bug Fix
 - fixed `parlxMove` event bug
