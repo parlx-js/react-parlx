@@ -1,6 +1,6 @@
 {
   "name": "react-parlx",
-  "version": "1.4.0",
+  "version": "1.4.0-beta.1",
   "description": "parlx.js implementation for React component",
   "author": "Jakub Biesiada",
   "license": "MIT",
@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/JB1905/react-parlx#readme",
   "dependencies": {
-    "parlx.js": "^2.0.4"
+    "parlx.js": "^3.0.0-beta.3"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.2.1",
