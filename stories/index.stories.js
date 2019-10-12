@@ -11,7 +11,7 @@ const stories = storiesOf('ReactParlx', module);
 const Main = ({ children, horizontal = false }) => (
   <main
     style={{
-      height: horizontal ? '100vh' : '200vh',
+      height: '200vh',
       width: horizontal ? '200vw' : '100vw',
       fontFamily: `
       -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -101,6 +101,7 @@ stories
       <ReactParlx
         style={styles}
         settings={{
+          height: '100vh',
           direction: text('Direction', 'horizontal')
         }}
       >
