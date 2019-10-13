@@ -2,7 +2,13 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  text,
+  boolean,
+  number,
+  radios
+} from '@storybook/addon-knobs';
 
 import ReactParlx from '../lib/react-parlx';
 
@@ -72,7 +78,12 @@ stories
         overlay={boolean('Add overlay', true)}
         settings={{
           height: text('Height', '100vh'),
-          speed: number('Speed', 0.3)
+          speed: number('Speed', 0.3, {
+            range: true,
+            min: -1,
+            max: 1,
+            step: 0.1
+          })
         }}
       >
         <Background />
@@ -81,18 +92,18 @@ stories
       </ReactParlx>
     </Main>
   ))
-  .add('Horizontal scroll', () => (
+  .add('Axis', () => (
     <Main horizontal>
       <ReactParlx
         style={styles}
         settings={{
           height: '100vh',
-          axis: text('Axis', 'X')
+          axis: radios('Axis', { X: 'X', Y: 'Y' }, 'X')
         }}
       >
         <Background />
 
-        <Title>Horizontal scroll</Title>
+        <Title>Axis</Title>
       </ReactParlx>
     </Main>
   ))
@@ -102,7 +113,15 @@ stories
         style={styles}
         settings={{
           height: '100vh',
-          direction: text('Direction', 'horizontal')
+          direction: radios(
+            'Direction',
+            {
+              vertical: 'vertical',
+              horizontal: 'horizontal',
+              diagonal: 'diagonal'
+            },
+            'diagonal'
+          )
         }}
       >
         <Background />
@@ -131,7 +150,14 @@ stories
       <ReactParlx
         style={{ ...styles, width: '50vw', margin: '40px auto' }}
         settings={{
-          type: text('type', 'foreground'),
+          type: radios(
+            'Type',
+            {
+              foreground: 'foreground',
+              background: 'background'
+            },
+            'foreground'
+          ),
           direction: 'horizontal',
           speed: -0.6
         }}
