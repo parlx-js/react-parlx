@@ -1,12 +1,12 @@
 /// <reference types="react" />
 import PropTypes from 'prop-types';
 declare type Props = {
-    settings: object;
-    callbacks: object;
-    parlxMove: (e: CustomEvent) => void;
-    className: string;
-    overlay: boolean;
-    children: ChildNode | ChildNode[];
+    readonly settings: object;
+    readonly callbacks: object;
+    readonly parlxMove: (e: CustomEvent) => void;
+    readonly className: string;
+    readonly overlay: boolean;
+    readonly children: ChildNode | ChildNode[];
 };
 declare function ReactParlx({ settings, callbacks, parlxMove, className, overlay, children, ...props }: Props): JSX.Element;
 declare namespace ReactParlx {

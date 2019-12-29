@@ -4,12 +4,12 @@ import Parlx from 'parlx.js';
 import { Options } from 'parlx.js/lib/types';
 
 type Props = {
-  settings: object;
-  callbacks: object;
-  parlxMove: (e: CustomEvent) => void;
-  className: string;
-  overlay: boolean;
-  children: ChildNode | ChildNode[];
+  readonly settings: object;
+  readonly callbacks: object;
+  readonly parlxMove: (e: CustomEvent) => void;
+  readonly className: string;
+  readonly overlay: boolean;
+  readonly children: ChildNode | ChildNode[];
 };
 
 export default function ReactParlx({
