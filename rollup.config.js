@@ -1,7 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
-import commonjs from '@rollup/plugin-commonjs';
 
 import pkg from './package.json';
 
@@ -20,12 +19,5 @@ export default {
     }
   ],
   external: ['parlx.js', 'react', 'prop-types'],
-  plugins: [
-    resolve(),
-    typescript(),
-    terser(),
-    commonjs({
-      include: 'node_modules/**'
-    })
-  ]
+  plugins: [resolve(), typescript(), terser()]
 };
