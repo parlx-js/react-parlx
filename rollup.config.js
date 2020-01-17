@@ -18,6 +18,10 @@ export default {
       sourcemap: true
     }
   ],
-  external: ['parlx.js', 'react', 'prop-types'],
-  plugins: [resolve(), typescript(), terser()]
+  plugins: [resolve(), typescript(), terser()],
+  external: [
+    ...Object.keys(pkg.dependencies),
+    ...Object.keys(pkg.peerDependencies)
+  ]
+  // external: ['parlx.js', 'react', 'prop-types'],
 };
