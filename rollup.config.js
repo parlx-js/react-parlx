@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
+import commonjs from '@rollup/plugin-commonjs';
 
 import pkg from './package.json';
 
@@ -18,10 +19,9 @@ export default {
       sourcemap: true
     }
   ],
-  plugins: [resolve(), typescript(), terser()],
+  plugins: [resolve(), typescript(), terser(), commonjs()],
   external: [
     ...Object.keys(pkg.dependencies),
     ...Object.keys(pkg.peerDependencies)
   ]
-  // external: ['parlx.js', 'react', 'prop-types'],
 };

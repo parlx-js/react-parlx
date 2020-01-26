@@ -37,6 +37,7 @@
     "parlx.js": "^3.0.0-beta.3"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "@storybook/addon-actions": "^5.3.8",
     "@storybook/addon-knobs": "^5.3.8",
@@ -44,7 +45,6 @@
     "@storybook/addons": "^5.3.8",
     "@storybook/react": "^5.3.8",
     "@storybook/storybook-deployer": "^2.8.1",
-    "@types/prop-types": "^15.7.3",
     "@types/react": "^16.9.17",
     "@typescript-eslint/parser": "^2.17.0",
     "babel-loader": "^8.0.6",
