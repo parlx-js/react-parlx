@@ -1,18 +1,18 @@
 {
   "name": "react-parlx",
-  "version": "1.3.1",
+  "version": "1.4.0-beta.1",
   "description": "parlx.js implementation for React component",
   "author": "Jakub Biesiada",
   "license": "MIT",
-  "main": "lib/react-parlx.min.js",
+  "main": "lib/react-parlx.cjs.js",
+  "module": "lib/react-parlx.esm.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "release": "rimraf lib/* && npm run prettier && npm run lint && npm run build:dev && npm run build",
-    "build": "webpack --env build",
-    "build:dev": "webpack --env dev",
+    "release": "rimraf lib/* && npm run prettier && npm run lint && npm run build",
+    "build": "rollup -c",
     "watch": "npm run build -- --watch",
-    "watch:dev": "npm run build:dev -- --watch",
-    "lint": "eslint src --fix",
-    "prettier": "prettier --write 'src/**/*.js'",
+    "lint": "eslint 'src/**/*.tsx' --fix",
+    "prettier": "prettier --write 'src/**/*.tsx'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages"
@@ -34,35 +34,34 @@
   },
   "homepage": "https://github.com/JB1905/react-parlx#readme",
   "dependencies": {
-    "parlx.js": "^2.0.4"
+    "parlx.js": "^3.0.0-beta.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.5.5",
-    "@storybook/addon-actions": "^5.1.11",
-    "@storybook/addon-knobs": "^5.1.11",
-    "@storybook/addon-links": "^5.1.11",
-    "@storybook/addons": "^5.1.11",
-    "@storybook/react": "^5.1.11",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-knobs": "^5.3.13",
+    "@storybook/addon-links": "^5.3.13",
+    "@storybook/addons": "^5.3.13",
+    "@storybook/react": "^5.3.13",
     "@storybook/storybook-deployer": "^2.8.1",
-    "babel-eslint": "^10.0.3",
+    "@types/react": "^16.9.19",
+    "@typescript-eslint/parser": "^2.19.2",
     "babel-loader": "^8.0.6",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "eslint": "^6.2.2",
-    "eslint-config-prettier": "^6.1.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1",
-    "husky": "^3.0.4",
-    "lint-staged": "^9.2.4",
-    "prettier": "^1.18.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "typescript": "^3.7.5"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
@@ -73,10 +72,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js}": [
+    "src/**/*.{tsx}": [
       "npm run prettier",
-      "npm run lint",
-      "git add"
+      "npm run lint"
     ]
   }
 }

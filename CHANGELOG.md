@@ -1,5 +1,15 @@
 # react-parlx Changelog
 
+## 1.4.0 (Soon)
+#### Dependencies
+- update parlx.js to `^3.0.0`
+
+#### Internal
+- rewrite with TypeScript
+
+#### Repository Changes
+- replace `Webpack` with `Rollup`
+
 ## 1.3.0 beta 2 / 1.3.0 (2019-03-23)
 #### Bug Fix
 - fixed `parlxMove` event bug
