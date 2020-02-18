@@ -1,6 +1,6 @@
 {
   "name": "react-parlx",
-  "version": "1.4.0-beta.1",
+  "version": "1.4.0-beta.2",
   "description": "parlx.js implementation for React component",
   "author": "Jakub Biesiada",
   "license": "MIT",
@@ -37,7 +37,6 @@
     "parlx.js": "^3.0.0-beta.3"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-knobs": "^5.3.13",
@@ -64,6 +63,7 @@
     "typescript": "^3.7.5"
   },
   "peerDependencies": {
+    "prop-types": "^15.7.2",
     "react": ">=16.8.0"
   },
   "husky": {
