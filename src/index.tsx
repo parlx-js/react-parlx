@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import Parlx from 'parlx.js';
-import { Options } from 'parlx.js/lib/types';
+import { Settings, Callbacks } from 'parlx.js/lib/types';
 
 type Props = {
-  readonly settings: object;
-  readonly callbacks: object;
+  readonly settings: Settings;
+  readonly callbacks: Callbacks;
   readonly parlxMove: (e: CustomEvent) => void;
   readonly className: string;
   readonly overlay: boolean;
@@ -25,12 +25,11 @@ const ReactParlx: React.FC<Props> = ({
   useEffect(() => {
     const current = el.current;
 
-    Parlx.init({ elements: current, settings, callbacks } as Options);
+    Parlx.init({ elements: current, settings, callbacks });
 
-    const output = (e: CustomEvent) => parlxMove(e.detail.move);
+    const output: EventListener = (e: CustomEvent) => parlxMove(e.detail.move);
 
-    if (parlxMove)
-      current!.addEventListener('parlxMove', output as EventListener);
+    if (parlxMove) current.addEventListener('parlxMove', output);
 
     return () => current!.parlx.destroy();
   }, [callbacks, el, parlxMove, settings]);
