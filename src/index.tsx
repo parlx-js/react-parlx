@@ -8,10 +8,13 @@ type Props = {
   readonly parlxMove: (e: CustomEvent) => void;
   readonly className: string;
   readonly overlay: boolean;
-  readonly children: ChildNode | ChildNode[];
 };
 
-const ReactParlx: React.FC<Props> = ({
+const ReactParlx: React.FC<Props &
+  React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  >> = ({
   settings,
   callbacks,
   parlxMove,
