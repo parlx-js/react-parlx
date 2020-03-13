@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 declare type Props = {
     readonly settings: object;
     readonly callbacks: object;
@@ -7,19 +7,5 @@ declare type Props = {
     readonly overlay: boolean;
     readonly children: ChildNode | ChildNode[];
 };
-declare function ReactParlx({ settings, callbacks, parlxMove, className, overlay, children, ...props }: Props): JSX.Element;
-declare namespace ReactParlx {
-    var propTypes: {
-        settings: PropTypes.Requireable<object>;
-        callbacks: PropTypes.Requireable<object>;
-        parlxMove: PropTypes.Requireable<(...args: any[]) => any>;
-        className: PropTypes.Requireable<string>;
-        overlay: PropTypes.Requireable<boolean>;
-        children: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-        props: PropTypes.Requireable<object>;
-    };
-    var defaultProps: {
-        className: string;
-    };
-}
+declare const ReactParlx: React.FC<Props>;
 export default ReactParlx;

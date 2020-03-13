@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import Parlx from 'parlx.js';
 import { Options } from 'parlx.js/lib/types';
 
@@ -12,15 +11,15 @@ type Props = {
   readonly children: ChildNode | ChildNode[];
 };
 
-export default function ReactParlx({
+const ReactParlx: React.FC<Props> = ({
   settings,
   callbacks,
   parlxMove,
-  className,
+  className = 'parallax',
   overlay,
   children,
   ...props
-}: Props) {
+}) => {
   const el = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -42,18 +41,6 @@ export default function ReactParlx({
       {children}
     </div>
   );
-}
-
-ReactParlx.propTypes = {
-  settings: PropTypes.object,
-  callbacks: PropTypes.object,
-  parlxMove: PropTypes.func,
-  className: PropTypes.string,
-  overlay: PropTypes.bool,
-  children: PropTypes.node,
-  props: PropTypes.object
 };
 
-ReactParlx.defaultProps = {
-  className: 'parallax'
-};
+export default ReactParlx;
