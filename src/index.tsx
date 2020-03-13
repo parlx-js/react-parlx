@@ -34,7 +34,7 @@ const ReactParlx: React.FC<Props &
 
     if (parlxMove) current.addEventListener('parlxMove', output);
 
-    return () => current!.parlx.destroy();
+    return () => current.parlx.destroy();
   }, [settings, callbacks, parlxMove]);
 
   return (
