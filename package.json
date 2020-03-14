@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JB1905/react-parlx.git"
+    "url": "https://github.com/parlx-js/react-parlx.git"
   },
   "keywords": [
     "React",
@@ -30,9 +30,9 @@
     "effect"
   ],
   "bugs": {
-    "url": "https://github.com/JB1905/react-parlx/issues"
+    "url": "https://github.com/parlx-js/react-parlx/issues"
   },
-  "homepage": "https://github.com/JB1905/react-parlx#readme",
+  "homepage": "https://github.com/parlx-js/react-parlx#readme",
   "dependencies": {
     "parlx.js": "^3.0.0-beta.3"
   },

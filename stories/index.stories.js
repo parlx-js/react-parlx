@@ -58,7 +58,7 @@ const Title = ({ children }) => (
 const Background = () => (
   <img
     className="parlx-children"
-    src="https://raw.githubusercontent.com/JB1905/parlx.js/gh-pages/static/media/mountains.97c55f0f.jpg"
+    src="https://raw.githubusercontent.com/parlx-js/parlx.js/gh-pages/static/media/mountains.97c55f0f.jpg"
   />
 );
 
