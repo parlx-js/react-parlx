@@ -10,11 +10,13 @@ type Props = {
   readonly overlay: boolean;
 };
 
-const ReactParlx: React.FC<Props &
-  React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  >> = ({
+const ReactParlx: React.FC<
+  Props &
+    React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLDivElement>,
+      HTMLDivElement
+    >
+> = ({
   settings,
   callbacks,
   parlxMove,
