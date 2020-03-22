@@ -5,7 +5,7 @@ import {
   text,
   boolean,
   number,
-  radios
+  radios,
 } from '@storybook/addon-knobs';
 
 import ReactParlx from '../lib/react-parlx.esm';
@@ -14,13 +14,13 @@ export default {
   title: 'ReactParlx',
   component: ReactParlx,
   decorators: [
-    storyFn => {
+    (storyFn) => {
       document.body.style.margin = 0;
 
       return storyFn();
     },
-    withKnobs
-  ]
+    withKnobs,
+  ],
 };
 
 const Main = ({ children, horizontal = false }) => (
@@ -33,7 +33,7 @@ const Main = ({ children, horizontal = false }) => (
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif`,
       fontWeight: '900',
-      fontSize: '2rem'
+      fontSize: '2rem',
     }}
   >
     {children}
@@ -48,7 +48,7 @@ const Title = ({ children }) => (
       position: 'absolute',
       textTransform: 'uppercase',
       margin: 0,
-      padding: 0
+      padding: 0,
     }}
   >
     {children}
@@ -68,7 +68,7 @@ const styles = {
   width: '100vw',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
 };
 
 export const basic = () => (
@@ -82,8 +82,8 @@ export const basic = () => (
           range: true,
           min: -1,
           max: 1,
-          step: 0.1
-        })
+          step: 0.1,
+        }),
       }}
     >
       <Background />
@@ -99,7 +99,7 @@ export const axis = () => (
       style={styles}
       settings={{
         height: '100vh',
-        axis: radios('Axis', { X: 'X', Y: 'Y' }, 'X')
+        axis: radios('Axis', { X: 'X', Y: 'Y' }, 'X'),
       }}
     >
       <Background />
@@ -120,10 +120,10 @@ export const direction = () => (
           {
             vertical: 'vertical',
             horizontal: 'horizontal',
-            diagonal: 'diagonal'
+            diagonal: 'diagonal',
           },
           'diagonal'
-        )
+        ),
       }}
     >
       <Background />
@@ -139,7 +139,7 @@ export const exclude = () => (
       style={styles}
       settings={{
         height: '100vh',
-        exclude: `/(${text('Exclude agents', 'Firefox')})/`
+        exclude: `/(${text('Exclude agents', 'Firefox')})/`,
       }}
     >
       <Background />
@@ -158,12 +158,12 @@ export const type = () => (
           'Type',
           {
             foreground: 'foreground',
-            background: 'background'
+            background: 'background',
           },
           'foreground'
         ),
         direction: 'horizontal',
-        speed: -0.6
+        speed: -0.6,
       }}
     >
       <Background />
@@ -179,7 +179,7 @@ export const customEvent = () => (
       style={styles}
       parlxMove={action('parlxMove')}
       settings={{
-        height: '100vh'
+        height: '100vh',
       }}
     >
       <Background />
