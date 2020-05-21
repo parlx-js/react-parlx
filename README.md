@@ -28,12 +28,12 @@ import ReactParlx from 'react-parlx';
 **• Later create parallax component and pass options:**
 ```js
 <ReactParlx
-  overlay={ /* true/false */ }
   settings={ /* settings */ }
   callbacks={ /* callbacks */ }
   parlxMove={ /* event output destination */ }
-  className={ /* class name(s) */ }
+  overlay={ /* true/false */ }
   overlayProps={ /* overlay props */ }
+  className={ /* class name(s) */ }
   // other props for div tag e.g. style
 />
 ```
@@ -57,8 +57,8 @@ Name | Type | Default | Description | Available options
 **settings** | object | `{}` | [Default parlx.js settings](https://github.com/parlx-js/parlx.js#settings) | [parlx.js settings](https://github.com/parlx-js/parlx.js#settings)
 **callbacks** | object | `{}` | [Default parlx.js callbacks](https://github.com/parlx-js/parlx.js#callbacks) | [parlx.js callbacks](https://github.com/parlx-js/parl
 **overlay** | boolean | `false` | Create overlay for parallax container element | `true` (enable) / `false` (disable)
-**className** | string | `parallax` | Parallax container class name | Name of parallax container
 **overlayProps** | HTMLDivElement props | `{}` | Params for overlay element | HTMLDivElement props
+**className** | string | `parallax` | Parallax container class name | Name of parallax container
 
 ## Event
 `parlxMove` event will output current position of the parallax element

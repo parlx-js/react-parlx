@@ -5,8 +5,8 @@ import { Settings, Callbacks } from 'parlx.js/lib/types';
 interface Props extends HTMLProps<HTMLDivElement> {
   readonly settings?: Settings;
   readonly callbacks?: Callbacks;
-  readonly overlay?: boolean;
   readonly parlxMove?: (e: CustomEvent) => void;
+  readonly overlay?: boolean;
   readonly overlayProps?: HTMLProps<HTMLDivElement>;
 }
 
