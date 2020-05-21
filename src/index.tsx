@@ -20,7 +20,10 @@ const ReactParlx: React.FC<Props> = ({
   children,
   ...props
 }) => {
-  const { className: overlayClassName = '', ...overlayRest } = overlayProps;
+  const {
+    className: overlayClassName = 'overlay',
+    ...overlayRest
+  } = overlayProps;
 
   const el = useRef<HTMLDivElement>(null);
 
