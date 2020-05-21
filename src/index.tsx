@@ -1,30 +1,27 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, HTMLProps } from 'react';
 import Parlx from 'parlx.js';
 import { Settings, Callbacks } from 'parlx.js/lib/types';
 
-type Props = {
-  readonly settings: Settings;
-  readonly callbacks: Callbacks;
-  readonly parlxMove: (e: CustomEvent) => void;
-  readonly className: string;
-  readonly overlay: boolean;
-};
+interface Props extends HTMLProps<HTMLDivElement> {
+  readonly settings?: Settings;
+  readonly callbacks?: Callbacks;
+  readonly overlay?: boolean;
+  readonly parlxMove?: (e: CustomEvent) => void;
+  readonly overlayProps?: HTMLProps<HTMLDivElement>;
+}
 
-const ReactParlx: React.FC<
-  Props &
-    React.DetailedHTMLProps<
-      React.HTMLAttributes<HTMLDivElement>,
-      HTMLDivElement
-    >
-> = ({
+const ReactParlx: React.FC<Props> = ({
   settings,
   callbacks,
+  overlay,
   parlxMove,
   className = 'parallax',
-  overlay,
+  overlayProps = {},
   children,
   ...props
 }) => {
+  const { className: overlayClassName = '', ...overlayRest } = overlayProps;
+
   const el = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,7 +29,7 @@ const ReactParlx: React.FC<
 
     Parlx.init({ elements: current, settings, callbacks });
 
-    const output: EventListener = (e: CustomEvent) => parlxMove(e.detail.move);
+    const output = (e: CustomEvent) => parlxMove(e.detail.move);
 
     if (parlxMove) current.addEventListener('parlxMove', output);
 
@@ -41,7 +38,8 @@ const ReactParlx: React.FC<
 
   return (
     <div {...props} ref={el} className={className}>
-      {overlay && <div className="overlay" />}
+      {overlay && <div {...overlayRest} className={overlayClassName} />}
+
       {children}
     </div>
   );
