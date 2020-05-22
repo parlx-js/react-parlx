@@ -1,6 +1,9 @@
 # react-parlx Changelog
 
 ## 1.4.0 (Soon)
+#### New Feature
+- added `overlayProps` param
+
 #### Dependencies
 - update parlx.js to `^3.0.0`
 
