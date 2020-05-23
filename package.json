@@ -15,7 +15,7 @@
     "watch:test": "npm run test -- --watch",
     "lint": "eslint 'src/**/*.tsx' --fix",
     "prettier": "prettier --write 'src/**/*.tsx'",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./assets -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages"
   },
