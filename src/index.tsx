@@ -32,7 +32,7 @@ const ReactParlx: React.FC<Props> = ({
 
     Parlx.init({ elements: current, settings, callbacks });
 
-    const output = (e: CustomEvent) => parlxMove(e.detail.move);
+    const output = (e: Event) => parlxMove((e as CustomEvent).detail.move);
 
     if (parlxMove) current.addEventListener('parlxMove', output);
 

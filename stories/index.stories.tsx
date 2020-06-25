@@ -8,14 +8,13 @@ import {
   radios,
 } from '@storybook/addon-knobs';
 
-import ReactParlx from '../lib/react-parlx.esm';
+import ReactParlx from '../src';
 
 export default {
   title: 'ReactParlx',
-  component: ReactParlx,
   decorators: [
-    (storyFn) => {
-      document.body.style.margin = 0;
+    (storyFn: () => void) => {
+      document.body.style.margin = '0';
 
       return storyFn();
     },
@@ -23,7 +22,10 @@ export default {
   ],
 };
 
-const Main = ({ children, horizontal = false }) => (
+const Main: React.FC<{ horizontal?: boolean }> = ({
+  children,
+  horizontal = false,
+}) => (
   <main
     style={{
       height: '200vh',
@@ -32,7 +34,7 @@ const Main = ({ children, horizontal = false }) => (
       -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif`,
-      fontWeight: '900',
+      fontWeight: 900,
       fontSize: '2rem',
     }}
   >
@@ -40,7 +42,7 @@ const Main = ({ children, horizontal = false }) => (
   </main>
 );
 
-const Title = ({ children }) => (
+const Title: React.FC = ({ children }) => (
   <h1
     style={{
       zIndex: 100,
@@ -55,12 +57,7 @@ const Title = ({ children }) => (
   </h1>
 );
 
-const Background = () => (
-  <img
-    className="parlx-children"
-    src="https://raw.githubusercontent.com/parlx-js/parlx.js/gh-pages/static/media/mountains.97c55f0f.jpg"
-  />
-);
+const Background = () => <img className="parlx-children" src="/lavender.jpg" />;
 
 const styles = {
   overflow: 'hidden',
@@ -139,7 +136,7 @@ export const exclude = () => (
       style={styles}
       settings={{
         height: '100vh',
-        exclude: `/(${text('Exclude agents', 'Firefox')})/`,
+        exclude: eval(`/(${text('Exclude agents', 'Firefox')})/`) as RegExp,
       }}
     >
       <Background />
@@ -178,9 +175,7 @@ export const customEvent = () => (
     <ReactParlx
       style={styles}
       parlxMove={action('parlxMove')}
-      settings={{
-        height: '100vh',
-      }}
+      settings={{ height: '100vh' }}
     >
       <Background />
 
