@@ -1,7 +1,11 @@
 # [react-parlx](https://github.com/parlx-js/react-parlx)
 
-[![NPM version](http://img.shields.io/npm/v/react-parlx.svg?style=flat-square)](https://www.npmjs.com/package/react-parlx)
-[![NPM downloads](http://img.shields.io/npm/dm/react-parlx.svg?style=flat-square)](https://www.npmjs.com/package/react-parlx)
+[![NPM version](http://img.shields.io/npm/v/react-parlx?style=flat-square)](https://www.npmjs.com/package/react-parlx)
+[![NPM downloads](http://img.shields.io/npm/dm/react-parlx?style=flat-square)](https://www.npmjs.com/package/react-parlx)
+[![NPM license](https://img.shields.io/npm/l/react-parlx?style=flat-square)](https://www.npmjs.com/package/react-parlx)
+[![Codecov](https://img.shields.io/codecov/c/github/parlx-js/react-parlx?style=flat-square)](https://codecov.io/gh/parlx-js/react-parlx)
+[![Travis](https://img.shields.io/travis/parlx-js/react-parlx/master?style=flat-square)](https://travis-ci.org/parlx-js/react-parlx)
+[![Bundle size](https://img.shields.io/bundlephobia/min/react-parlx?style=flat-square)](https://bundlephobia.com/result?p=react-parlx)
 
 #### [parlx.js](https://www.npmjs.com/package/parlx.js) implementation for React component
 

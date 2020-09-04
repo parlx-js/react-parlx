@@ -34,9 +34,17 @@ const ReactParlx: React.FC<Props> = ({
 
     const output = (e: Event) => parlxMove((e as CustomEvent).detail.move);
 
-    if (parlxMove) current.addEventListener('parlxMove', output);
+    if (parlxMove) {
+      current.addEventListener('parlxMove', output);
+    }
 
-    return () => current.parlx.destroy();
+    return () => {
+      if (parlxMove) {
+        current.removeEventListener('parlxMove', output);
+      }
+
+      current.parlx.destroy();
+    };
   }, [settings, callbacks, parlxMove]);
 
   return (

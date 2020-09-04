@@ -1,26 +1,13 @@
 import React from 'react';
+import { Meta, Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import {
-  withKnobs,
-  text,
-  boolean,
-  number,
-  radios,
-} from '@storybook/addon-knobs';
 
 import ReactParlx from '../src';
 
 export default {
   title: 'ReactParlx',
-  decorators: [
-    (storyFn: () => void) => {
-      document.body.style.margin = '0';
-
-      return storyFn();
-    },
-    withKnobs,
-  ],
-};
+  component: ReactParlx,
+} as Meta;
 
 const Main: React.FC<{ horizontal?: boolean }> = ({
   children,
@@ -68,20 +55,25 @@ const styles = {
   alignItems: 'center',
 };
 
-export const basic = () => (
+export const basic: Story = ({ overlay, height, speed }) => (
   <Main>
     <ReactParlx
       style={styles}
-      overlay={boolean('Add overlay', true)}
+      overlay={overlay}
       settings={{
-        height: text('Height', '100vh'),
-        speed: number('Speed', 0.3, {
-          range: true,
-          min: -1,
-          max: 1,
-          step: 0.1,
-        }),
+        height,
+        speed,
       }}
+      // overlay={boolean('Add overlay', true)}
+      // settings={{
+      //   height: text('Height', '100vh'),
+      //   speed: number('Speed', 0.3, {
+      //     range: true,
+      //     min: -1,
+      //     max: 1,
+      //     step: 0.1,
+      //   }),
+      // }}
     >
       <Background />
 
@@ -90,13 +82,20 @@ export const basic = () => (
   </Main>
 );
 
-export const axis = () => (
+basic.args = {
+  overlay: true,
+  height: '100vh',
+  speed: 0.3,
+};
+
+export const axis: Story = ({ axis }) => (
   <Main horizontal>
     <ReactParlx
       style={styles}
       settings={{
         height: '100vh',
-        axis: radios('Axis', { X: 'X', Y: 'Y' }, 'X'),
+        axis,
+        //   axis: radios('Axis', { X: 'X', Y: 'Y' }, 'X'),
       }}
     >
       <Background />
@@ -106,21 +105,26 @@ export const axis = () => (
   </Main>
 );
 
-export const direction = () => (
+axis.args = {
+  axis: 'X',
+};
+
+export const direction: Story = ({ direction }) => (
   <Main>
     <ReactParlx
       style={styles}
       settings={{
         height: '100vh',
-        direction: radios(
-          'Direction',
-          {
-            vertical: 'vertical',
-            horizontal: 'horizontal',
-            diagonal: 'diagonal',
-          },
-          'diagonal'
-        ),
+        direction,
+        //   direction: radios(
+        //     'Direction',
+        //     {
+        //       vertical: 'vertical',
+        //       horizontal: 'horizontal',
+        //       diagonal: 'diagonal',
+        //     },
+        //     'diagonal'
+        //   ),
       }}
     >
       <Background />
@@ -130,13 +134,17 @@ export const direction = () => (
   </Main>
 );
 
-export const exclude = () => (
+direction.args = {
+  direction: 'diagonal',
+};
+
+export const exclude: Story = () => (
   <Main>
     <ReactParlx
       style={styles}
       settings={{
         height: '100vh',
-        exclude: eval(`/(${text('Exclude agents', 'Firefox')})/`) as RegExp,
+        //   exclude: eval(`/(${text('Exclude agents', 'Firefox')})/`) as RegExp,
       }}
     >
       <Background />
@@ -146,19 +154,23 @@ export const exclude = () => (
   </Main>
 );
 
-export const type = () => (
+exclude.args = {
+  // exclude
+};
+
+export const type: Story = ({ type }) => (
   <Main>
     <ReactParlx
       style={{ ...styles, width: '50vw', margin: '40px auto' }}
       settings={{
-        type: radios(
-          'Type',
-          {
-            foreground: 'foreground',
-            background: 'background',
-          },
-          'foreground'
-        ),
+        //   type: radios(
+        //     'Type',
+        //     {
+        //       foreground: 'foreground',
+        //       background: 'background',
+        //     },
+        //     'foreground'
+        //   ),
         direction: 'horizontal',
         speed: -0.6,
       }}
@@ -170,7 +182,11 @@ export const type = () => (
   </Main>
 );
 
-export const customEvent = () => (
+type.args = {
+  type: 'foreground',
+};
+
+export const customEvent: Story = () => (
   <Main>
     <ReactParlx
       style={styles}
