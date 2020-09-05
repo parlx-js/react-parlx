@@ -9,10 +9,11 @@ export default {
   component: ReactParlx,
 } as Meta;
 
-const Main: React.FC<{ horizontal?: boolean }> = ({
-  children,
-  horizontal = false,
-}) => (
+interface MainProps {
+  readonly horizontal?: boolean;
+}
+
+const Main: React.FC<MainProps> = ({ children, horizontal = false }) => (
   <main
     style={{
       height: '200vh',
@@ -44,7 +45,9 @@ const Title: React.FC = ({ children }) => (
   </h1>
 );
 
-const Background = () => <img className="parlx-children" src="/lavender.jpg" />;
+const Background: React.FC = () => (
+  <img className="parlx-children" src="/lavender.jpg" />
+);
 
 const styles = {
   overflow: 'hidden',
@@ -55,26 +58,15 @@ const styles = {
   alignItems: 'center',
 };
 
-export const basic: Story = ({ overlay, height, speed }) => (
+interface BasicProps {
+  readonly overlay: boolean;
+  readonly height: string;
+  readonly speed: number;
+}
+
+export const basic: Story<BasicProps> = ({ overlay, ...args }) => (
   <Main>
-    <ReactParlx
-      style={styles}
-      overlay={overlay}
-      settings={{
-        height,
-        speed,
-      }}
-      // overlay={boolean('Add overlay', true)}
-      // settings={{
-      //   height: text('Height', '100vh'),
-      //   speed: number('Speed', 0.3, {
-      //     range: true,
-      //     min: -1,
-      //     max: 1,
-      //     step: 0.1,
-      //   }),
-      // }}
-    >
+    <ReactParlx style={styles} overlay={overlay} settings={args}>
       <Background />
 
       <Title>Basic</Title>
@@ -82,20 +74,34 @@ export const basic: Story = ({ overlay, height, speed }) => (
   </Main>
 );
 
+basic.argTypes = {
+  speed: {
+    control: {
+      type: 'range',
+      min: -1,
+      max: 1,
+      step: 0.1,
+    },
+  },
+};
+
 basic.args = {
   overlay: true,
   height: '100vh',
   speed: 0.3,
 };
 
-export const axis: Story = ({ axis }) => (
+interface AxisProps {
+  readonly axis: 'X' | 'Y';
+}
+
+export const axis: Story<AxisProps> = ({ axis }) => (
   <Main horizontal>
     <ReactParlx
       style={styles}
       settings={{
-        height: '100vh',
         axis,
-        //   axis: radios('Axis', { X: 'X', Y: 'Y' }, 'X'),
+        height: '100vh',
       }}
     >
       <Background />
@@ -105,26 +111,30 @@ export const axis: Story = ({ axis }) => (
   </Main>
 );
 
+axis.argTypes = {
+  axis: {
+    control: {
+      type: 'radio',
+      options: ['X', 'Y'],
+    },
+  },
+};
+
 axis.args = {
   axis: 'X',
 };
 
-export const direction: Story = ({ direction }) => (
+interface DirectionProps {
+  readonly direction: 'vertical' | 'horizontal' | 'diagonal';
+}
+
+export const direction: Story<DirectionProps> = ({ direction }) => (
   <Main>
     <ReactParlx
       style={styles}
       settings={{
-        height: '100vh',
         direction,
-        //   direction: radios(
-        //     'Direction',
-        //     {
-        //       vertical: 'vertical',
-        //       horizontal: 'horizontal',
-        //       diagonal: 'diagonal',
-        //     },
-        //     'diagonal'
-        //   ),
+        height: '100vh',
       }}
     >
       <Background />
@@ -134,17 +144,30 @@ export const direction: Story = ({ direction }) => (
   </Main>
 );
 
+direction.argTypes = {
+  direction: {
+    control: {
+      type: 'select',
+      options: ['vertical', 'horizontal', 'diagonal'],
+    },
+  },
+};
+
 direction.args = {
   direction: 'diagonal',
 };
 
-export const exclude: Story = () => (
+interface ExcludeProps {
+  readonly exclude: RegExp;
+}
+
+export const exclude: Story<ExcludeProps> = ({ exclude }) => (
   <Main>
     <ReactParlx
       style={styles}
       settings={{
+        exclude,
         height: '100vh',
-        //   exclude: eval(`/(${text('Exclude agents', 'Firefox')})/`) as RegExp,
       }}
     >
       <Background />
@@ -155,22 +178,19 @@ export const exclude: Story = () => (
 );
 
 exclude.args = {
-  // exclude
+  exclude: /(Firefox)/,
 };
 
-export const type: Story = ({ type }) => (
+interface TypeProps {
+  readonly type: 'foreground' | 'background';
+}
+
+export const type: Story<TypeProps> = ({ type }) => (
   <Main>
     <ReactParlx
       style={{ ...styles, width: '50vw', margin: '40px auto' }}
       settings={{
-        //   type: radios(
-        //     'Type',
-        //     {
-        //       foreground: 'foreground',
-        //       background: 'background',
-        //     },
-        //     'foreground'
-        //   ),
+        type,
         direction: 'horizontal',
         speed: -0.6,
       }}
@@ -181,6 +201,15 @@ export const type: Story = ({ type }) => (
     </ReactParlx>
   </Main>
 );
+
+type.argTypes = {
+  type: {
+    control: {
+      type: 'radio',
+      options: ['foreground', 'background'],
+    },
+  },
+};
 
 type.args = {
   type: 'foreground',
