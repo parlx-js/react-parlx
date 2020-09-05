@@ -19,8 +19,8 @@
     "storybook": "start-storybook -s ./assets -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
-    "//commit": "git-cz",
-    "//semantic-release": "semantic-release"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -76,7 +76,7 @@
   "peerDependencies": {
     "react": ">=16.8.0"
   },
-  "//config": {
+  "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
