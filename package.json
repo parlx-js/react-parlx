@@ -27,12 +27,12 @@
     "url": "https://github.com/parlx-js/react-parlx.git"
   },
   "keywords": [
-    "react",
     "component",
     "parallax",
-    "movement",
     "scroll",
-    "effect"
+    "movement",
+    "effect",
+    "react"
   ],
   "bugs": {
     "url": "https://github.com/parlx-js/react-parlx/issues"
