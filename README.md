@@ -16,6 +16,11 @@
 **[Live – check website](https://parlx-js.github.io/parlx.js/)**<br>
 **[Playground – play with library in Storybook](https://parlx-js.github.io/react-parlx/)**
 
+### Alternatives
+
+- [react-parallax](https://github.com/rrutsche/react-parallax) by [Richard Rutsche](https://github.com/rrutsche)
+- [React Scroll Parallax](https://github.com/jscottsmith/react-scroll-parallax) by [J Scott Smith](https://github.com/jscottsmith)
+
 ## How to Install
 
 First, install the library in your project by npm:
