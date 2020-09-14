@@ -7,6 +7,11 @@ import ReactParlx from '../src';
 export default {
   title: 'ReactParlx',
   component: ReactParlx,
+  parameters: {
+    actions: {
+      disabled: true,
+    },
+  },
 } as Meta;
 
 interface MainProps {
@@ -158,7 +163,7 @@ direction.args = {
 };
 
 interface ExcludeProps {
-  readonly exclude: RegExp;
+  readonly exclude: string;
 }
 
 export const exclude: Story<ExcludeProps> = ({ exclude }) => (
@@ -166,7 +171,7 @@ export const exclude: Story<ExcludeProps> = ({ exclude }) => (
     <ReactParlx
       style={styles}
       settings={{
-        exclude,
+        exclude: new RegExp(exclude),
         height: '100vh',
       }}
     >
@@ -178,7 +183,7 @@ export const exclude: Story<ExcludeProps> = ({ exclude }) => (
 );
 
 exclude.args = {
-  exclude: /(Firefox)/,
+  exclude: 'Firefox',
 };
 
 interface TypeProps {
@@ -228,3 +233,12 @@ export const customEvent: Story = () => (
     </ReactParlx>
   </Main>
 );
+
+customEvent.parameters = {
+  actions: {
+    disabled: false,
+  },
+  controls: {
+    disabled: true,
+  },
+};
