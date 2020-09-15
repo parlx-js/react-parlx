@@ -1,5 +1,3 @@
-import { addDecorator } from '@storybook/react';
-
 import './global.css';
 
 export const parameters = {
@@ -10,9 +8,4 @@ export const parameters = {
   },
   docs: { page: null },
   layout: 'fullscreen',
-  // parameters: {
-  //   actions: {
-  //     disabled: true,
-  //   },
-  // },
 };
