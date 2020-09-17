@@ -27,4 +27,3 @@ jobs:
           local_dir: storybook-static
           on:
             branch: master
-
