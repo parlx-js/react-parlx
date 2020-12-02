@@ -50,7 +50,7 @@ const Title: React.FC = ({ children }) => (
   </h1>
 );
 
-const Background: React.FC = () => (
+const Background = () => (
   <img className="parlx-children" src="/lavender.jpg" />
 );
 
@@ -69,7 +69,7 @@ interface BasicProps {
   readonly speed: number;
 }
 
-export const basic: Story<BasicProps> = ({ overlay, ...args }) => (
+export const Basic: Story<BasicProps> = ({ overlay, ...args }) => (
   <Main>
     <ReactParlx style={styles} overlay={overlay} settings={args}>
       <Background />
@@ -79,7 +79,7 @@ export const basic: Story<BasicProps> = ({ overlay, ...args }) => (
   </Main>
 );
 
-basic.argTypes = {
+Basic.argTypes = {
   speed: {
     control: {
       type: 'range',
@@ -90,7 +90,7 @@ basic.argTypes = {
   },
 };
 
-basic.args = {
+Basic.args = {
   overlay: true,
   height: '100vh',
   speed: 0.3,
@@ -100,7 +100,7 @@ interface AxisProps {
   readonly axis: 'X' | 'Y';
 }
 
-export const axis: Story<AxisProps> = ({ axis }) => (
+export const Axis: Story<AxisProps> = ({ axis }) => (
   <Main horizontal>
     <ReactParlx
       style={styles}
@@ -116,7 +116,7 @@ export const axis: Story<AxisProps> = ({ axis }) => (
   </Main>
 );
 
-axis.argTypes = {
+Axis.argTypes = {
   axis: {
     control: {
       type: 'radio',
@@ -125,7 +125,7 @@ axis.argTypes = {
   },
 };
 
-axis.args = {
+Axis.args = {
   axis: 'X',
 };
 
@@ -133,7 +133,7 @@ interface DirectionProps {
   readonly direction: 'vertical' | 'horizontal' | 'diagonal';
 }
 
-export const direction: Story<DirectionProps> = ({ direction }) => (
+export const Direction: Story<DirectionProps> = ({ direction }) => (
   <Main>
     <ReactParlx
       style={styles}
@@ -149,7 +149,7 @@ export const direction: Story<DirectionProps> = ({ direction }) => (
   </Main>
 );
 
-direction.argTypes = {
+Direction.argTypes = {
   direction: {
     control: {
       type: 'select',
@@ -158,7 +158,7 @@ direction.argTypes = {
   },
 };
 
-direction.args = {
+Direction.args = {
   direction: 'diagonal',
 };
 
@@ -166,7 +166,7 @@ interface ExcludeProps {
   readonly exclude: string;
 }
 
-export const exclude: Story<ExcludeProps> = ({ exclude }) => (
+export const Exclude: Story<ExcludeProps> = ({ exclude }) => (
   <Main>
     <ReactParlx
       style={styles}
@@ -182,7 +182,7 @@ export const exclude: Story<ExcludeProps> = ({ exclude }) => (
   </Main>
 );
 
-exclude.args = {
+Exclude.args = {
   exclude: 'Firefox',
 };
 
@@ -190,7 +190,7 @@ interface TypeProps {
   readonly type: 'foreground' | 'background';
 }
 
-export const type: Story<TypeProps> = ({ type }) => (
+export const Type: Story<TypeProps> = ({ type }) => (
   <Main>
     <ReactParlx
       style={{ ...styles, width: '50vw', margin: '40px auto' }}
@@ -207,7 +207,7 @@ export const type: Story<TypeProps> = ({ type }) => (
   </Main>
 );
 
-type.argTypes = {
+Type.argTypes = {
   type: {
     control: {
       type: 'radio',
@@ -216,11 +216,11 @@ type.argTypes = {
   },
 };
 
-type.args = {
+Type.args = {
   type: 'foreground',
 };
 
-export const customEvent: Story = () => (
+export const CustomEvent: Story = () => (
   <Main>
     <ReactParlx
       style={styles}
@@ -234,7 +234,7 @@ export const customEvent: Story = () => (
   </Main>
 );
 
-customEvent.parameters = {
+CustomEvent.parameters = {
   actions: {
     disabled: false,
   },
