@@ -1,14 +1,25 @@
 # [react-parlx](https://github.com/parlx-js/react-parlx)
 
-[![NPM version](http://img.shields.io/npm/v/react-parlx.svg?style=flat-square)](https://www.npmjs.com/package/react-parlx)
-[![NPM downloads](http://img.shields.io/npm/dm/react-parlx.svg?style=flat-square)](https://www.npmjs.com/package/react-parlx)
+[![NPM version](https://img.shields.io/npm/v/react-parlx?style=flat-square)](https://www.npmjs.com/package/react-parlx)
+[![NPM downloads](https://img.shields.io/npm/dm/react-parlx?style=flat-square)](https://www.npmjs.com/package/react-parlx)
+[![NPM license](https://img.shields.io/npm/l/react-parlx?style=flat-square)](https://www.npmjs.com/package/react-parlx)
+[![Codecov](https://img.shields.io/codecov/c/github/parlx-js/react-parlx?style=flat-square)](https://codecov.io/gh/parlx-js/react-parlx)
+[![Travis](https://img.shields.io/travis/parlx-js/react-parlx/master?style=flat-square)](https://travis-ci.org/parlx-js/react-parlx)
+[![Bundle size](https://img.shields.io/bundlephobia/min/react-parlx?style=flat-square)](https://bundlephobia.com/result?p=react-parlx)
 
-#### [parlx.js](https://www.npmjs.com/package/parlx.js) implementation for React component
+## About
 
-## Demo
+**[parlx.js](https://www.npmjs.com/package/parlx.js) implementation for React component**
+
+### Demo
 
 **[Live – check website](https://parlx-js.github.io/parlx.js/)**<br>
 **[Playground – play with library in Storybook](https://parlx-js.github.io/react-parlx/)**
+
+### Alternatives
+
+- [react-parallax](https://github.com/rrutsche/react-parallax) by [Richard Rutsche](https://github.com/rrutsche)
+- [React Scroll Parallax](https://github.com/jscottsmith/react-scroll-parallax) by [J Scott Smith](https://github.com/jscottsmith)
 
 ## How to Install
 
@@ -51,7 +62,9 @@ You can add components with or without additional content:
 _with:_
 
 ```js
-<ReactParlx /* options */>// additional content</ReactParlx>
+<ReactParlx /* options */>
+  {/* additional content */}
+</ReactParlx>
 ```
 
 _without:_
@@ -73,6 +86,51 @@ _without:_
 ## Event
 
 `parlxMove` event will output current position of the parallax element
+
+## Examples
+
+```js
+import React from 'react';
+import ReactParlx from 'react-parlx';
+
+/* ------ First Example ------ */
+
+export const FirstExample = () => {
+  return (
+    <ReactParlx
+      className="parallax"
+      callbacks={{
+        onResize: (el) => console.log(el),
+      }}
+    />
+  );
+};
+
+/* ------ Second Example ------ */
+
+export const SecondExample = () => {
+  const handleParlxMove = (e) => {
+    console.log(e.detail);
+  };
+
+  const style = {
+    padding: 10,
+  };
+
+  return (
+    <ReactParlx
+      settings={{
+        speed: 0.5,
+        direction: 'diagonal',
+      }}
+      style={style}
+      parlxMove={handleParlxMove}
+    >
+      <h3>Hello World!</h3>
+    </ReactParlx>
+  );
+};
+```
 
 ## License
 

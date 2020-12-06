@@ -4,13 +4,13 @@ import { render } from '@testing-library/react';
 import ReactParlx from '../src';
 
 describe('ReactParlx', () => {
-  it('should render component with default props', () => {
+  it('should render ReactParlx with default options', () => {
     const { container } = render(<ReactParlx />);
 
     expect(container).toMatchSnapshot();
   });
 
-  it('should render component with custom props', () => {
+  it('should render ReactParlx with custom options', () => {
     const { container } = render(
       <ReactParlx
         className="parlx"

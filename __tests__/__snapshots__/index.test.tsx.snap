@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactParlx should render ReactParlx with custom options 1`] = `
+<div>
+  <div
+    class="parlx"
+    style="border: 1px solid #f00; height: 400px;"
+  >
+    <div
+      class="parlx-overlay"
+    />
+    <p>
+      Hello World!
+    </p>
+    <div
+      class="parlx-children"
+      style="height: 460.79999999999995px; width: 614.4px; transform: translate(0px, 0px); object-fit: cover;"
+    />
+  </div>
+</div>
+`;
+
+exports[`ReactParlx should render ReactParlx with default options 1`] = `
+<div>
+  <div
+    class="parallax"
+    style="height: 400px;"
+  >
+    <div
+      class="parlx-children"
+      style="height: 460.79999999999995px; width: 614.4px; transform: translate(0px, 0px); object-fit: cover;"
+    />
+  </div>
+</div>
+`;
