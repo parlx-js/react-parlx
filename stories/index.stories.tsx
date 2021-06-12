@@ -224,7 +224,7 @@ export const CustomEvent: Story = () => (
   <Main>
     <ReactParlx
       style={styles}
-      parlxMove={action('parlxMove')}
+      onParlxMove={action('parlxMove')}
       settings={{ height: '100vh' }}
     >
       <Background />

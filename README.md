@@ -4,7 +4,7 @@
 [![NPM downloads](https://img.shields.io/npm/dm/react-parlx?style=flat-square)](https://www.npmjs.com/package/react-parlx)
 [![NPM license](https://img.shields.io/npm/l/react-parlx?style=flat-square)](https://www.npmjs.com/package/react-parlx)
 [![Codecov](https://img.shields.io/codecov/c/github/parlx-js/react-parlx?style=flat-square)](https://codecov.io/gh/parlx-js/react-parlx)
-[![Travis](https://img.shields.io/travis/parlx-js/react-parlx/master?style=flat-square)](https://travis-ci.org/parlx-js/react-parlx)
+[![Travis](https://img.shields.io/travis/parlx-js/react-parlx/main?style=flat-square)](https://travis-ci.org/parlx-js/react-parlx)
 [![Bundle size](https://img.shields.io/bundlephobia/min/react-parlx?style=flat-square)](https://bundlephobia.com/result?p=react-parlx)
 
 ## About
@@ -13,8 +13,8 @@
 
 ### Demo
 
-**[Live – check website](https://parlx-js.github.io/parlx.js/)**<br>
-**[Playground – play with library in Storybook](https://parlx-js.github.io/react-parlx/)**
+- [Live – check website](https://parlx-js.github.io/parlx.js/)
+- [Playground – play with library in Storybook](https://parlx-js.github.io/react-parlx/)
 
 ### Alternatives
 
@@ -49,7 +49,7 @@ import ReactParlx from 'react-parlx';
 <ReactParlx
   settings={/* settings */}
   callbacks={/* callbacks */}
-  parlxMove={/* event output destination */}
+  onParlxMove={/* event output destination */}
   overlay={/* true/false */}
   overlayProps={/* overlay props */}
   className={/* class name(s) */}
@@ -85,7 +85,7 @@ _without:_
 
 ## Event
 
-`parlxMove` event will output current position of the parallax element
+`onParlxMove` event callback will output current position of the parallax element
 
 ## Examples
 
@@ -124,7 +124,7 @@ export const SecondExample = () => {
         direction: 'diagonal',
       }}
       style={style}
-      parlxMove={handleParlxMove}
+      onParlxMove={handleParlxMove}
     >
       <h3>Hello World!</h3>
     </ReactParlx>
