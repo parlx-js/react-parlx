@@ -25,30 +25,30 @@ const ReactParlx = ({
     ...overlayRest
   } = overlayProps;
 
-  const el = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const current = el.current;
+    const elements = ref.current;
 
-    Parlx.init({ elements: current, settings, callbacks });
+    Parlx.init({ elements, settings, callbacks });
 
     const output = (e: Event) => onParlxMove((e as CustomEvent).detail.move);
 
     if (onParlxMove) {
-      current.addEventListener('parlxMove', output);
+      elements.addEventListener('parlxMove', output);
     }
 
     return () => {
       if (onParlxMove) {
-        current.removeEventListener('parlxMove', output);
+        elements.removeEventListener('parlxMove', output);
       }
 
-      current.parlx.destroy();
+      elements.parlx.destroy();
     };
   }, [settings, callbacks, onParlxMove]);
 
   return (
-    <div {...props} ref={el} className={className}>
+    <div {...props} ref={ref} className={className}>
       {overlay && <div {...overlayRest} className={overlayClassName} />}
 
       {children}
